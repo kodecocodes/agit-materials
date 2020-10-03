@@ -1,0 +1,32 @@
+Chapter 14 - Challenge Solution
+
+Your challenge is:
+
+You’ve discovered that Zach has also been doing a bit of refactoring on the **zValidator** branch with the range checking function:
+
+```none
+| * 136dc26 (zValidator) Refactoring the range checking function
+|/  
+* 665575c util02: Adding function to check the range of values
+```
+
+Your challenge is to rebase the work you’ve done on the wValidator branch on top of the zValidator branch. Again, the shared context here, and the limited scope of the changes, means you don’t need a merge commit.
+
+Once you’ve rebased wValidator on top of zValidator, delete both the zValidator and xValidator branches, as you’re done with them. Git might complain when you try to delete the branches. Explain why this is, and then figure out how to force Git to do it anyway.
+
+Here are the steps to follow to complete this challenge:
+
+- Ensure you are on the wValidator branch with “git checkout wValidator”.
+- Execute “git rebase zValidator”; this should complete without conflict.
+- Execute “git branch -d zValidator”; this should complete without issues.
+- Execute “git branch -d xValidator”, but Git stops you with the following error:
+
+error: The branch 'xValidator' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D xValidator'.
+
+This is because the xValidator branch contains commits that Git doesn’t recognized as merged, due to the rebasing work you did earlier.
+
+- To force Git to delete the branch, execute “git branch -D xValidator”.
+
+---
+end of file

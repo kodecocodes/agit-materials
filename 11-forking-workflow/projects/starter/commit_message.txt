@@ -1,0 +1,8 @@
+Fix bug in which alternate divisors were not used
+
+This commit updates the code in the fizzbuzz_for_num method to
+start using the fizz_divisor and buzz_divisor parameters that
+were added to the method signature in a previous commit
+
+Verified the fix by running existing tests in test_fizzbuzz.py
+which were prevously failing and now are all passing
