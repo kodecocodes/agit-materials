@@ -1,4 +1,4 @@
-Chapter 13 — Challenge Solution
+Chapter 2 — Challenge Solution
 
 This challenge simply reuses the commands you’ve already learned in this chapter to accomplish the following tasks:
 
@@ -38,7 +38,7 @@ This project is maintained by teamWYXZ:
 - Yasmin
 - Xanthe
 - Zack
-||||||| merged common ancestors
+||||||| 4e6df27
 =======
 ## Contact Info
 
@@ -46,9 +46,10 @@ For info on this project, please contact [Xanthe](mailto:xanthe@example.com).
 >>>>>>> xReadmeUpdates
 
 
+
 8. It appears someone has added license and maintainer information along the way, and Xanthe has added the contact information in a separate branch. Git sees this as a conflict because both authors added the text at the exact same place: the end of the file. Git doesn’t know anything about the semantics of this file, so it bails and asks you to manually correct the conflict.
 9. I want to keep both sets of changes, so I remove the following line: <<<<<<< HEAD
-10. I also remove: ||||||| merged common ancestors
+10. I also remove: ||||||| 4e6df27
 11. I also remove: =======
 12. I also remove: >>>>> xReadmeUpdates
 13. I save my work and exit out of the text editor.
