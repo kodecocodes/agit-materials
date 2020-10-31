@@ -1,4 +1,4 @@
-Chapter 15 - Challenge Solution
+Chapter 5 - Challenge Solution
 
 Your challenge has two parts. The first:
 
@@ -19,14 +19,14 @@ Here’s how I solved this:
 1. Execute "git log --oneline" to see the commit history. Again, it makes sense to rebase on top of 69670e7 as the ancestor commit.
 2. Start the interactive rebase with "git rebase -i 69670e7"
 3. Use "dd" and "p" to move the lines in the rebase script around to get all of the check01 to check04 lines together.
-4. Change the check02, check03, check04, Removing TODO and Refactoring the main check function commands from pick to squash.
+4. Change the "check02", "check03", "check04", "Creating utility functions for Magic Square validation", "Removing TODO" and "Refactoring the main check function" commands from pick to squash.
 5. Save your changes with "Escape", then ":wq", then "Enter".
 6. Once you’re back into Vim to create the commit message for the squash, use "dG" to clear the buffer, press "i" to enter Insert mode, and set the message to "Creating the magic square validation function". Again, "Escape", then ":wq", then "Enter" to save your work and exit Vim.
 7. Pull up your log with "git log --oneline" and you’ll see your squashed commit:
 
-* d6a095e (wValidator) Updates to README.md
-* 32cb912 Creating the magic square validation function
-* 926a485 Creating utility functions for magic square validation
+9c8c3c4 (HEAD -> wValidator) Updates to README.md
+20c7222 Creating the magic square validation function
+69670e7 Adding a new secret
 
 Nice and tidy!
 
@@ -34,9 +34,9 @@ The second challenge:
 
 Now that you’ve squashed your work down to just a few commits, it’s time to get wValidator back into the `master` branch. It’s likely your first instinct is to merge `wValidator` back to `master`, but you’re a rebase guru by this point, so you’ll rebase those commits on top of `master` instead:
 
-1. Ensure you’re on the wValidator branch.
+1. Ensure you’re on the wValidator branch with "git checkout wValidator".
 2. Execute `git rebase` with `master` as your rebase target.
-3. Crud — a conflict. Open README.md and resolve the conflict to preserve your changes, and the changes to the `## Contact` section.
+3. Crud — a conflict. Open README.md and resolve the conflict to preserve your changes of adding your name to the list of maintainers, as well as preserving the `## Contact` section.
 4. Save your work.
 5. Stage those changes with `git add README.md`.
 6. Continue the rebase with `git rebase --continue`.
@@ -88,9 +88,8 @@ For info on this project, please contact [Xanthe](mailto:xanthe@example.com).
 6. Continue the rebase with `git rebase --continue`.
 7. If I execute "git log --all --decorate --oneline --graph" I see the following:
 
-* d6a095e (HEAD -> wValidator) Updates to README.md
-* 32cb912 Creating the magic square validation function
-* 926a485 Creating utility functions for magic square validation
+* 56ef1ab (HEAD -> wValidator) Updates to README.md
+* fc840cc Creating the magic square validation function
 | * edfcbf7 (xUtils) Starting work on the contributors section
 | * d71ee79 Adding a reference to the generator script
 | * da7d366 Importing the new scripts onto the html page
@@ -100,10 +99,9 @@ For info on this project, please contact [Xanthe](mailto:xanthe@example.com).
 | * 81a2bf2 Render a 2D array to a string
 | * a33f5f7 Extract an array from a string
 | * 49de6d7 Adding array generation utils
-| | *   7086b93 (refs/stash) On master: Tools version
-| | |\  
-| |/ /  
-|/| |   
+| | * 7086b93 (refs/stash) On master: Tools version
+| |/| 
+|/| | 
 | | * ac71a22 index on master: b336b31 Merge branch 'xReadmeUpdates'
 | |/  
 |/|   
@@ -111,6 +109,7 @@ For info on this project, please contact [Xanthe](mailto:xanthe@example.com).
 |\ \  
 | * | 9df03be Adding contact details to README
 * | |   7fb65ff Merge branch 'zIntegration'
+
 
 The wValidator branch is at the tip of the log, and waaaay back in history is the actual "master" label.
 
@@ -125,7 +124,7 @@ Updating b336b31..d6a095e
 Fast-forward
  README.md                    |  7 ++++++-
  js/magic_square/validator.js | 90 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
- 2 files changed, 94 insertions(+), 3 deletions(-)
+ 2 files changed, 91 insertions(+), 3 deletions(-)
 
 Aha - a fast-forward merge. That’s what’s special about this. Remember, a fast-forward merge can happen when there is nothing to merge, and a branch label can simply be moved along to the tip of the merging branch.
 
