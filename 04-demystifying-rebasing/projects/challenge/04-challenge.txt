@@ -1,6 +1,4 @@
-Chapter 14 - Challenge Solution
-
-Your challenge is:
+Chapter 4 - Challenge Solution
 
 You’ve discovered that Zach has also been doing a bit of refactoring on the **zValidator** branch with the range checking function:
 
