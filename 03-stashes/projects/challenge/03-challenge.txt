@@ -1,4 +1,4 @@
-Chapter 11 - Challenge Solution
+Chapter 3 - Challenge Solution
 
 This challenge has you diving into the Git documentation a bit, to solve the following problem:
 
@@ -17,7 +17,13 @@ Turns out there’s another way to remove stashes from the stack: "git stash dro
 
 "Dropped refs/stash@{0} (fca102bbfc2e4dc51264ae46211f95164ac2c933)"
 
-So popping a stash is very much like a combination "apply" and then "drop". "git stash drop" is useful for cleaning up your stash stack, should you have a lot on there. But if your stash stack gets too big, then you’re invoking a lot of overhead to manage that stash stack. My preference is to keep my stash stacks brief and as short-lived as possible.
+So popping a stash is very much like a combination "apply" and then "drop". 
+
+Execute the following to drop that last stash:
+
+git stash drop stash@{0}
+
+"git stash drop" is useful for cleaning up your stash stack, should you have a lot on there. But if your stash stack gets too big, then you’re invoking a lot of overhead to manage that stash stack. My preference is to keep my stash stacks brief and as short-lived as possible.
 
 ---
 end of file
