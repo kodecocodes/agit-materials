@@ -2,6 +2,8 @@
 
 > **Note**: You may use the project in the challenge directory as a starter point for this challange.
 
+## Challenge Prompt
+
 This challenge simply reuses the commands you’ve already learned in this chapter to accomplish the following tasks:
 
 - Checkout the `xReadmeUpdates` branch and look at the README.md file to see Xanthe’s version.
@@ -10,6 +12,8 @@ This challenge simply reuses the commands you’ve already learned in this chapt
 - Stage your changes.
 - Commit your changes.
 - Delete the `xReadmeUpdates` branch.
+
+## Challenge Solution
 
 Here are the steps I followed to complete this challenge; your solution may be slightly different:
 
@@ -60,4 +64,5 @@ For info on this project, please contact [Xanthe](mailto:xanthe@example.com).
 17. I delete the `xReadmeUpdates` branch with the command: `git branch -d xReadmeUpdates`
 
 ---
+
 end of file
